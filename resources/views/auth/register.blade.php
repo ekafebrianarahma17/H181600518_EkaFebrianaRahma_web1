@@ -40,13 +40,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('contact') }}</label>
+                            <label for="kontak" class="col-md-4 col-form-label text-md-right">{{ __('Kontak') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contact" type="contact" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact">
+                                <input id="kontak" type="text" class="form-control @error('kontak') is-invalid @enderror" name="kontak" value="{{ old('kontak') }}" required autocomplete="kontak">
+
+                                @error('kontak')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
-
 
 
                         <div class="form-group row">
