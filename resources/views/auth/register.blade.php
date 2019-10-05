@@ -78,21 +78,24 @@
 
 
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('captcha') }}</label>
-
-                            <div class="col-md-6">
-                                <div class="captcha">
-                                    <span>{!! captcha_img() !!}</span>
-                                    <button type="button" class="btn btn-success btn-refersh">Refersh</button>
-                            </div>
-                            <input type="text" id="captcha" class="form-control" placeholder="Enter Captcha" name="captcha">
-                            @if ($errors->has('captcha'))
-                                <span class="help-block">
-                                    <strong>{{$errors->first('captcha') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="offset-md-4 col-md-6">
+                            <div class="hasil_refereshrecapcha">
+                                    {!! captcha_img('math') !!}
+                                </div>
+                               
+                               <br>
+                               <button type="button" class="btn btn-success btn-refresh"><a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a></button>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Masukan Captcha') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="captcha" type="text" class="form-control" name="captcha" required>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -108,3 +111,21 @@
     </div>
 </div>
 @endsection
+
+
+@section('scripts')
+    <script>
+        function refreshCaptcha(){
+            $.ajax({
+                url: "/refereshcapcha",
+                type: 'get',
+                dataType: 'html',        
+                success: function(json) {
+                    $('.hasil_refereshrecapcha').html(json);
+                },
+                error: function(data) {
+                    alert('Try Again.');
+                }
+            });
+        }
+    </script>
