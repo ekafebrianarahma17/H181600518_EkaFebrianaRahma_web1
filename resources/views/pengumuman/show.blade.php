@@ -11,37 +11,37 @@
                 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">ID</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->id !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->id !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Judul</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->judul !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->judul !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Isi</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->isi !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->isi !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Users Id</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->users_id !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->users_id !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Create</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->created_at->format('d/m/Y H:i') !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->created_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right">Update</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->updated_at->format('d/m/Y H:i') !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->updated_at->format('d/m/Y H:i') !!}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label text-md-right"> Kategori Pengumuman ID</label>
-                        <label class="col-md-8 col-form-label text-md-left">{!! $Pengumuman->kategori_pengumuman_id !!}</label>
+                        <label class="col-md-8 col-form-label text-md-left">{!! $pengumuman->kategori_pengumuman_id !!}</label>
                     </div>
 
                     <div class="form-group row mb-0">
