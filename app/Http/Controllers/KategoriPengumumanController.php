@@ -14,8 +14,8 @@ class KategoriPengumumanController extends Controller
     }
 
     public function show($id){
-        //$KategoriArtikel=KategoriArtikel::where('id', $id)->first();
-        $kategoriPengumuman=kategoriPengumuman::find($id);
+     
+        $kategoriPengumuman=KategoriPengumuman::find($id);
 
         if(empty($kategoriPengumuman)){
             return redirect(route('kategori_pengumuman.index'));
@@ -67,5 +67,11 @@ class KategoriPengumumanController extends Controller
 
         $kategoriPengumuman->delete();
         return redirect(route('kategori_pengumuman.index'));
+    }
+
+    public function trash(){
+        $listKategoriPengumuman=KategoriPengumuman::onlyTrashed();
+
+        return view('kategori_pengumuman.trash', compact('listKategoriPengumuman'));
     }
 }

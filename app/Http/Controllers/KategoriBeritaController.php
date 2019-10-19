@@ -68,4 +68,10 @@ class KategoriBeritaController extends Controller
         $kategoriBerita->delete();
         return redirect(route('kategori_berita.index'));
     }
+
+    public function trash(){
+        $listKategoriBerita=KategoriBerita::onlyTrashed();
+
+        return view('kategori_berita.trash', compact('listKategoriBerita'));
+    }
 }

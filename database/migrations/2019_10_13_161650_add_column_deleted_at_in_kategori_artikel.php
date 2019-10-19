@@ -14,7 +14,11 @@ class AddColumnDeletedAtInKategoriArtikel extends Migration
     public function up()
     {
         Schema::table('kategori_artikel', function (Blueprint $table) {
-            $table=>delete;
+            $table->softDeletes();
+        });
+
+        Schema::table('artikel', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -26,7 +30,11 @@ class AddColumnDeletedAtInKategoriArtikel extends Migration
     public function down()
     {
         Schema::table('kategori_artikel', function (Blueprint $table) {
-            //
+            $table->dropSoftDeletes();
+        });
+
+        Schema::table('artikel', function (Blueprint $table) {
+            $table->dropSoftDeletes();
         });
     }
 }

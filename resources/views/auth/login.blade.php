@@ -48,22 +48,23 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row">
                             <div class="offset-md-4 col-md-6">
-                                <div class="hasil_refereshrecapcha">
-                                    {!! captcha_img('math') !!}
+                                <div class="hasil.refereshrecapcha">
+                                    {!! captcha_img('flat') !!}
                                 </div>
-                               
-                               <br>
-                               <button type="button" class="btn btn-success btn-refresh"><a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a></button>
+                                <br>
+                                <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh</a>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Masukan Captcha') }}</label>
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Captcha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha" required>
+
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -71,7 +72,8 @@
                                 @enderror
                             </div>
                         </div>
-
+                       
+                        
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -113,8 +115,8 @@
                 type: 'get',
                 dataType: 'html',        
                 success: function(json) {
-                    $('.hasil_refereshrecapcha').html(json);
-                },
+                    $('.hasil.refereshrecapcha').html(json);
+                 },
                 error: function(data) {
                     alert('Try Again.');
                 }

@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     {!! Form::model($kategoriGaleri, ['route' => ['kategori_galeri.update', $kategoriGaleri->id],'method'=>'patch']) !!}
-                        @include('kategori_Galeri.form')
+                        @include('kategori_galeri.form')
                     {!! Form::close() !!}
                 </div>
             </div>
