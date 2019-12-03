@@ -4,7 +4,7 @@
         <label for="nama" class="col-md-2 col-form-label text-md-right">{{ __('Nama') }}</label>
 
             <div class="col-md-10">
-            {!! Form::text('judul', null,['class'=>"form-control", 'required','autofocus']); !!}
+            {!! Form::text('nama', null,['class'=>"form-control", 'required','autofocus']); !!}
 
                 @error('nama')
                     <span class="invalid-feedback" role="alert">
@@ -16,7 +16,7 @@
 
 
 <div class="form-group row">
-        <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Galeri Id') }}</label>
+        <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Galeri') }}</label>
 
             <div class="col-md-10">
                 {!! Form::select('kategori_galeri_id', $kategoriGaleri,null,["class"=>"form-control","required"] )!!}
@@ -33,7 +33,7 @@
         <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
 
             <div class="col-md-10">
-                <input id="path" type="text" class="form-control @error('path') is-invalid @enderror" name="path" value="{{ old('path') }}" required autofocus>
+            {!! Form::file('path', null,['class'=>"form-control", 'required','autofocus']); !!}
 
                 @error('path')
                     <span class="invalid-feedback" role="alert">
